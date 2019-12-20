@@ -1,0 +1,7 @@
+const nextTeamEventsTypes = {
+  GET_NEXT_EVENT_START: "GET_NEXT_EVENT_START",
+  GET_NEXT_EVENT_SUCCESS: "GET_NEXT_EVENT_SUCCESS",
+  GET_NEXT_EVENT_ERROR: "GET_NEXT_EVENT_ERROR"
+};
+
+export default nextTeamEventsTypes;

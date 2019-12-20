@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
-function App() {
+import MainView from "./views/MainView";
+import LeagueContainer from "./views/league/LeagueContainer";
+import TeamContainer from "./views/team/TeamContainer";
+import EventContainer from "./views/event/EventContainer";
+import ErrorView from "./views/ErrorView";
+
+import Navbar from "./components/layout/Navbar";
+import Main from "./components/layout/Main";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HashRouter>
+        <Navbar />
+        <Main>
+          <Switch>
+            <Route exact path="/" component={MainView} />
+            <Route exact path="/ligi/:league" component={LeagueContainer} />
+            <Route exact path="/klub/:team" component={TeamContainer} />
+            <Route exact path="/mecz/:event" component={EventContainer} />
+            <Route component={ErrorView} />
+          </Switch>
+        </Main>
+      </HashRouter>
+    </>
   );
 }
-
-export default App;
