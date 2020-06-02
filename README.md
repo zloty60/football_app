@@ -1,3 +1,6 @@
+Aplikacja nie działa teraz poprawnie ponieważ korzysta z api, które w związku z COVID-19 uległo zmianie. W najbliższym czasie projekt
+zostanie zaktualizowany
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
