@@ -2,8 +2,6 @@ import axios from "axios";
 
 import leagueTableTypes from "./leagueTableTypes";
 
-//`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${id}&s=${season}`
-
 export function getTable(id, season) {
   return (dispatch) => {
     dispatch(getTableStart());

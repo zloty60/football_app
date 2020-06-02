@@ -4,7 +4,8 @@ import {
   Card,
   CardContent,
   makeStyles,
-  Divider
+  Divider,
+  Box,
 } from "@material-ui/core";
 
 import ListItemLeague from "./../components/listItemLeague/ListItemLeague";
@@ -23,56 +24,64 @@ const links = [
   {
     id: "4328",
     name: "English Premier League",
-    logo: unitedKingdom
+    logo: unitedKingdom,
   },
   {
     id: "4335",
     name: "Spanish La Liga",
-    logo: spain
+    logo: spain,
   },
   {
     id: "4332",
     name: "Italian Serie A",
-    logo: italy
+    logo: italy,
   },
   {
     id: "4334",
     name: "French Ligue 1",
-    logo: france
+    logo: france,
   },
 
   {
     id: "4331",
     name: "German Bundesliga",
-    logo: germany
+    logo: germany,
   },
   {
     id: "4344",
     name: "Portuguese Primeira Liga",
-    logo: portugal
+    logo: portugal,
   },
   {
     id: "4337",
     name: "Dutch Eredivisie",
-    logo: netherlands
+    logo: netherlands,
   },
   {
     id: "4338",
     name: "Belgian Jupiler League",
-    logo: belgium
-  }
+    logo: belgium,
+  },
 ];
 
 export default function MainView() {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>
+      <Card className={classes.warning}>
+        <CardContent>
+          Aplikacja nie działa teraz poprawnie ponieważ korzysta z api, które w
+          związku z COVID-19 uległo zmianie. W najbliższym czasie projekt
+          zostanie zaktualizowany
+        </CardContent>
+      </Card>
+      <Box mb={5} />
       <Card className={classes.card}>
         <CardTitle title="Wybierz ligę:" />
         <Divider />
         <CardContent className={classes.cardContent}>
           <List className={classes.list}>
-            {links.map(el => (
+            {links.map((el) => (
               <ListItemLeague key={el.id} el={el} />
             ))}
           </List>
@@ -82,7 +91,7 @@ export default function MainView() {
   );
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   wrapper: {
     height: "100%",
     maxWidth: "650px",
@@ -91,16 +100,19 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "35px",
     marginTop: "40px",
     [theme.breakpoints.up("sm")]: {
-      marginTop: "65px"
-    }
+      marginTop: "65px",
+    },
   },
   cardContent: {
-    paddingTop: 0
+    paddingTop: 0,
   },
   list: {
-    paddingTop: 0
+    paddingTop: 0,
   },
   flag: {
-    boxShadow: theme.shadows[14]
-  }
+    boxShadow: theme.shadows[14],
+  },
+  warning: {
+    backgroundColor: "#E57373",
+  },
 }));
